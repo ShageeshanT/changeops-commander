@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChangeOps Commander</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ChangeOps Commander</div>
+    <div class="status-strip">
+      <div class="service green">auth-api</div>
+      <div class="service green">checkout-api</div>
+      <div class="service green">inventory-db</div>
+      <div class="service green">frontend</div>
+    </div>
+    <button id="btn-simulate" class="btn-primary">Simulate Incident</button>
+  </header>
+
+  <main>
+    <aside class="incidents">
+      <h2>Active Incidents</h2>
+      <ul id="incident-list">
+        <li class="empty">No active incidents.</li>
+      </ul>
+    </aside>
+
+    <section class="workspace">
+      <div id="agent-timeline" class="timeline hidden">
+        <h2>Agent Timeline</h2>
+        <div class="events" id="events-container"></div>
+      </div>
+
+      <div id="proposal-card" class="proposal hidden">
+        <h3>Action Required</h3>
+        <p id="proposal-summary"></p>
+        <div class="code-block" id="proposal-commands"></div>
+        <div class="risk-badge" id="proposal-risk"></div>
+        <div class="actions">
+          <button id="btn-approve" class="btn-danger">Approve & Execute</button>
+          <button id="btn-reject" class="btn-secondary">Reject</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="mock-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
